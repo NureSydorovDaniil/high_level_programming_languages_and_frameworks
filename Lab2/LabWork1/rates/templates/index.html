@@ -1,0 +1,29 @@
+<h1>Курс валют</h1>
+
+<h2> Додати Валюту</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Додати</button>
+</form>
+
+<hr>
+
+<h2>Таблиця валют</h2>
+
+<table border="1">
+    <tr>
+        <th>Назва</th>
+        <th>Покупка</th>
+        <th>Продажа</th>
+    </tr>
+
+    {% for c in currencies %}
+    <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.buy_rate }}</td>
+        <td>{{ c.sell_rate }}</td>
+    </tr>
+    {% endfor %}
+</table>
