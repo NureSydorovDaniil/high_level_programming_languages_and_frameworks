@@ -1,0 +1,66 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.upload-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+
+.content {
+  display: flex;
+  gap: 25px;
+}
+
+.video-list {
+  width: 30%;
+}
+
+.player-box {
+  width: 70%;
+}
+
+.video-button {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+video {
+  width: 100%;
+  max-height: 400px;
+  background: black;
+}
+
+.comment-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.comment {
+  background: #f2f2f2;
+  padding: 8px;
+  border-radius: 5px;
+}
