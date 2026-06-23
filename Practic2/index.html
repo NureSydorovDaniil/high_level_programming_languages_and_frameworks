@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Дані про себе</title>
+</head>
+<body>
+  <h1>Відображення даних про себе</h1>
+
+  <div id="result"></div>
+
+  <script>
+    fetch("data.json")
+      .then(response => response.text())
+      .then(data => {
+        const person = JSON.parse(data);
+
+        const container = document.getElementById("result");
+
+        const nameElement = document.createElement("p");
+        nameElement.textContent = "Ім'я: " + person.name;
+
+        const ageElement = document.createElement("p");
+        ageElement.textContent = "Вік: " + person.age;
+
+        const hobbiesTitle = document.createElement("p");
+        hobbiesTitle.textContent = "Хобі:";
+
+        const hobbiesList = document.createElement("ul");
+
+        person.hobbies.forEach(hobby => {
+          const li = document.createElement("li");
+          li.textContent = hobby;
+          hobbiesList.appendChild(li);
+        });
+
+        container.appendChild(nameElement);
+        container.appendChild(ageElement);
+        container.appendChild(hobbiesTitle);
+        container.appendChild(hobbiesList);
+      })
+      .catch(error => {
+        console.log("Помилка:", error);
+      });
+  </script>
+</body>
+</html>
